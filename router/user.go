@@ -1,4 +1,4 @@
-package users
+package routes
 
 import (
 	"github.com/gin-gonic/gin"
@@ -12,4 +12,5 @@ func RegisterRoutes(router *gin.RouterGroup) {
 	router.GET("/auth/user", middleware.AuthMiddleware(), controllers.AuthUser)
 
 	// Register other routes similarly
+	// store user routes
 }

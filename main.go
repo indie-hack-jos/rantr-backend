@@ -23,7 +23,7 @@ func setRouter() *gin.Engine {
 
 	v1 := r.Group("/api/v1")
 	{
-		users.RegisterRoutes(v1)
+		routes.RegisterRoutes(v1)
 	}
 
 	return r

@@ -1,10 +1,12 @@
-# RECON
+### Rantr
+
+A social media app where you can rant about your job
 
 ---
 
 ## Contribution
 
----
+[Click Here](./CONTRIBUTING.md)
 
 1. Cloning the project
    - Always clone from the staging branch `git clone -b staging https://github.com/Recon-Africa/recon-api`
@@ -77,6 +79,10 @@ The above is simplified in this table:
 | Code deployment | deployment/branch-name | `deployment:commit-message` |
 
 ---
+
+### Contribute
+
+[Click Here](./CONTRIBUTING.md)
 
 ## Run Server
 

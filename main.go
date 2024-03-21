@@ -1,10 +1,13 @@
 package main
 
 import (
+	"log"
 	"net/http"
 
+	"rantr/config"
+	routes "rantr/router"
+
 	"github.com/gin-gonic/gin"
-	"rantr/router"
 )
 
 func setRouter() *gin.Engine {
@@ -23,13 +26,19 @@ func setRouter() *gin.Engine {
 
 	v1 := r.Group("/api/v1")
 	{
-		routes.RegisterRoutes(v1)
+		routes.RegisterUserRoutes(v1)
+		routes.RegisterPostRoutes(v1)
 	}
+
 
 	return r
 }
 
 func main() {
+	if err := config.DbConfig(); err != nil {
+        log.Fatalf("Failed to initialize MongoDB: %v", err)
+    }
+
 	r := setRouter()
 	r.Run(":8765")
 }

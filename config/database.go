@@ -7,6 +7,10 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
+var (
+    mongoClient *mongo.Client
+)
+
 func DbConfig() *mongo.Client {
 	// Connect to MongoDB
 	println("")
@@ -21,6 +25,10 @@ func DbConfig() *mongo.Client {
 		log.Fatal(err)
 	}
 	log.Println("Connected to MongoDB!")
-	return client
+	mongoClient = client
+	return nil
+}
 
+func GetMongoClient() *mongo.Client {
+    return mongoClient
 }

@@ -1,12 +1,13 @@
 package routes
 
 import (
-	"github.com/gin-gonic/gin"
 	controllers "rantr/controller"
 	"rantr/middleware"
+
+	"github.com/gin-gonic/gin"
 )
 
-func RegisterRoutes(router *gin.RouterGroup) {
+func RegisterUserRoutes(router *gin.RouterGroup) {
 	router.POST("/auth/signup", controllers.CreateUser)
 	router.POST("/auth/login", controllers.LoginUser)
 	router.GET("/auth/user", middleware.AuthMiddleware(), controllers.AuthUser)

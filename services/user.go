@@ -17,7 +17,7 @@ type UserService struct {
 }
 
 func NewUserService() *UserService {
-	client := config.DbConfig()
+	client := config.GetMongoClient()
 	return &UserService{client: client}
 }
 
